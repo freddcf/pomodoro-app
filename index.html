@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>Timer</title>
+</head>
+
+<body>
+    <div class="app">
+        <div class="player-container">
+            <div class="time-select">
+                <div class="time-line">
+                    <div class="short-break">Short Break</div>|
+                    <div class="focus">Focus</div>|
+                    <div class="long-break">Long Break</div>
+                </div>
+            </div>
+            <div class="timer-display">
+                <audio loop class="song" src="./sounds/pomodoro_sound.mp3">
+                </audio>
+                <audio class="alarm" src="./sounds/finish.mp3"></audio>
+                <div class="mins">00</div>
+                <div>:</div>
+                <div class="secs">00</div>
+                <div class="circle">
+                    <svg class="track-outline" width="320" height="320" viewBox="0 0 320 320" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="160" cy="160" r="160" fill="#393D6B" />
+                    </svg>
+                    <svg width="295" height="295" viewBox="0 0 295 295" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="147.5" cy="147.5" r="141.5" stroke="#292B47" stroke-width="6" />
+                    </svg>
+                    <svg class="moving-outline" width="295" height="295" viewBox="0 0 295 295" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle class="moving-outline_circle" cx="147.5" cy="147.5" r="141.5" stroke="#292B47"
+                            stroke-width="12" stroke-linecap="round">
+                    </svg>
+                </div>
+            </div>
+            <div class="config-btn">
+                <button class="sound"><i class="far fa-clock"></i></button>
+                <button class="play"><i class="fas fa-play"></i></button>
+                <button class="stop"><i class="far fa-stop-circle"></i></button>
+            </div>
+        </div>
+
+    </div>
+    <form class="forms">
+        <h3 class="settings-title">Settings</h3>
+        <label for="inFocusTime">Focus</label>
+        <input type="number" value="" id="inFocusTime" placeholder="Pomodoro miutes" />
+        <label for="inBreakTime">Break</label>
+        <input type="number" value="" id="inBreakTime" placeholder="Break minutes" />
+        <label for="inLongBreakTime">Long break</label>
+        <input type="number" value="" id="inLongBreakTime" placeholder="Long break minutes" />
+        <button type="submit">Save settings</button>
+    </form>
+    </div>
+
+    <script src="js/timer.js"></script>
+    <script src="js/progress.js"></script>
+</body>
+
+</html>
